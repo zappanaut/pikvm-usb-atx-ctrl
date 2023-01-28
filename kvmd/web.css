@@ -1,0 +1,63 @@
+/* Here you can customize the Web UI */
+
+img[id$="_power_led"] {
+    content: url('/share/svg/led-atx-power.svg');
+}
+img[id$="_hdd_led"] {
+    content: url('/share/svg/led-atx-hdd.svg');
+}
+
+button[id$="_power_button"]::before, button[id$="_power_button_long"]::before {
+    content: '\23FB';
+    display: inline-table;
+    margin-right: .33rem;
+}
+
+button[id$="_reset_button"]::before {
+    content: '\1F5D8';
+    display: inline-table;
+    margin-right: .33rem;
+}
+
+.pos-abs-middle {
+    position: absolute;
+    transform: translateY(-50%);
+}
+.pos-rel {
+    position: relative;    
+}
+
+/* for the positioning of the "LEDs" */
+table.kv tr {
+    position: relative;
+}
+
+button[id$="_kvm_button"]::before {
+    content: '';
+    display: inline-table;
+    margin-right: .33rem;
+    width: 1.5rem; /* space for the button */
+}
+
+/* move "led" inside button */
+img[id$="_port_active_led"] {
+    content: url("data:image/svg+xml,%3csvg shape-rendering='optimizeQuality' preserveAspectRatio='xMidYMid meet' viewBox='0 0 64 64' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ccircle fill='none' stroke='currentColor' stroke-width='4' cx='32' cy='32' r='20'%3e%3c/circle%3e%3ccircle fill='currentColor' cx='32' cy='32' r='10'%3e%3c/circle%3e%3c/svg%3e");
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    left: .8rem;
+}
+
+.padding-x-1 {
+    padding-left: 1rem;
+    padding-right:  .5rem;
+}
+
+.x-name {
+    padding-left: 1rem;
+    padding-right:  .5rem;
+    font-size: 16px;
+    font-weight: bold;
+}

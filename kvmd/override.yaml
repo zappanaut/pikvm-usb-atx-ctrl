@@ -1,0 +1,116 @@
+####################################################################
+#                                                                  #
+# Override Pi-KVM system settings. This file uses the YAML syntax. #
+#                                                                  #
+#    https://github.com/pikvm/pikvm/blob/master/pages/config.md    #
+#                                                                  #
+# All overridden parameters will be applied AFTER other configs    #
+# and "!include" directives and BEFORE validation.                 #
+# Not: Sections should be combined under shared keys.              #
+#                                                                  #
+####################################################################
+#
+
+kvmd:
+    atx:
+        type: disabled
+    gpio:
+        drivers:
+            ez:
+                type: ezcoo
+                protocol: 1
+                device: /dev/ttyUSB0
+            atx_port1:
+                type: gpio
+                device: /dev/gpio-by-serial/[RP2040-serial]
+            atx_port2:
+                type: gpio
+                device: /dev/gpio-by-serial/[RP2040-serial]
+        scheme:
+            kvm1_port_active_led:
+                driver: ez
+                pin: 0
+                mode: input
+            kvm2_port_active_led:
+                driver: ez
+                pin: 1
+                mode: input
+            kvm1_kvm_button:
+                driver: ez
+                pin: 0
+                mode: output
+                switch: false
+            kvm2_kvm_button:
+                driver: ez
+                pin: 1
+                mode: output
+                switch: false
+            atx1_reset_button:
+                driver: atx_port1
+                pin: 7
+                mode: output
+                switch: false
+                pulse:
+                    delay: 0.2
+            atx1_power_button:
+                driver: atx_port1
+                pin: 8
+                mode: output
+                switch: false
+                pulse:
+                    delay: 0.5
+                    max_delay: 1.0
+            atx1_power_button_long:
+                driver: atx_port1
+                pin: 8
+                mode: output
+                switch: false
+                pulse:
+                    delay: 2.5
+                    min-delay: 2.0
+                    max_delay: 3.0
+            atx1_power_led:
+                driver: atx_port1
+                pin: 14
+                mode: input
+            atx1_hdd_led:
+                driver: atx_port1
+                pin: 15
+                mode: input
+            atx2_reset_button:
+                driver: atx_port2
+                pin: 7
+                mode: output
+                switch: false
+            atx2_power_button:
+                driver: atx_port2
+                pin: 8
+                mode: output
+                switch: false
+                pulse:
+                    delay: 0.5
+                    max_delay: 1.0
+            atx2_power_button_long:
+                driver: atx_port2
+                pin: 8
+                mode: output
+                switch: false
+                pulse:
+                    delay: 2.5
+                    min-delay: 2.0
+                    max_delay: 3.0
+            atx2_power_led:
+                driver: atx_port2
+                pin: 14
+                mode: input
+            atx2_hdd_led:
+                driver: atx_port2
+                pin: 15
+                mode: input
+        view:
+            header:
+                title: '<img class="led-gray" src="/share/svg/kvm.svg" title=""><span>KVM & ATX</span>'
+            table:
+                - ['#', '#<div class="pos-rel"><span class="pos-abs-middle">KVM-Switch</span></div>', '#<span class="padding-x-1">NAME</span>' ,"#PWR", "#HDD", "#&nbsp;", '#<div class="pos-rel"><span class="pos-abs-middle">ATX Power and Reset</span></div>']
+                - ['kvm1_port_active_led|red', 'kvm1_kvm_button||Port 1', '#<span class="x-name">foo</span>', 'atx1_power_led|green', 'atx1_hdd_led|yellow', '#', 'atx1_power_button|confirm|Power <sup><i>short</i></sup>', 'atx1_power_button_long|confirm|Power <sup><i>long</i></sup>', 'atx1_reset_button|confirm|Reset']
+                - ['kvm2_port_active_led|red', 'kvm2_kvm_button||Port 2', '#<span class="x-name">bar</span>', 'atx2_power_led|green', 'atx2_hdd_led|yellow', '#', 'atx2_power_button|confirm|Power <sup><i>short</i></sup>', 'atx2_power_button_long|confirm|Power <sup><i>long</i></sup>', 'atx2_reset_button|confirm|Reset']
