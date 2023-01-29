@@ -39,8 +39,8 @@ It is also possible to build this on a breadboard. You may want to have a look a
 
 There are no special requirements regarding the PiKVM installation itself. This setup is using only mechanisms that are already in place.
 
-* Copy the files `kvmd/override.yml` and `kvmd/web.css` to the `/etc/kvmd/` directory.
-* Edit the `kvmd/override.yml` file and replace `[RP2040-serial]` with the serial numbers of your boards.
+Use the `kvmd/override.yml` and `kvmd/web.css` as a starting point and copy them to the `/etc/kvmd/` directory after editing.
+In particular replace `[RP2040-serial]` in `override.yml` with the serial numbers of your boards.
 
 
 ## Future development
@@ -51,4 +51,5 @@ The board's I/O capabilities can be used for many kinds of telemetry like e.g. m
 ## Disclaimer
 
 Even though this setup is working for me, your mileage may vary...
+
 
