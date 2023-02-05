@@ -24,7 +24,7 @@ Each board has a (hopefully) unique serial number, that is used by a udev rule t
 
 ### Flashing the RP2040
 
-The firmware sources can be found in the [pico-usb-io-board](https://github.com/zappanaut/pico-usb-io-board) repository.
+The firmware sources can be found in the [pico-usb-io-board](https://github.com/zappanaut/pico-usb-io-board) repository. Make sure you are using the [usb-atx-ctrl branch](https://github.com/zappanaut/pico-usb-io-board/tree/usb-atx-ctrl)!
 Or simply use the firmware image `firmware/dln2.uf2` from this repository.
 
 
