@@ -9,6 +9,7 @@ img[id$="_hdd_led"] {
 
 button[id$="_power_button"]::before, button[id$="_power_button_long"]::before {
     mask: url('/share/svg/led-atx-power.svg');
+    -webkit-mask: url('/share/svg/led-atx-power.svg');
     width: .9rem;
     height: .9rem;
     margin-right: .33rem;
@@ -18,6 +19,7 @@ button[id$="_power_button"]::before, button[id$="_power_button_long"]::before {
 
 button[id$="_reset_button"]::before {
     mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e %3cpath stroke='black' stroke-linecap='square' stroke-width='.5' d='M12 2A10 10 0 1 1 2 12h2a8 8 0 1 0 1.38-4.5H8v2H2v-6h2V6a9.98 9.98 0 0 1 8-4z'/%3e %3c/svg%3e");
+    -webkit-mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e %3cpath stroke='black' stroke-linecap='square' stroke-width='.5' d='M12 2A10 10 0 1 1 2 12h2a8 8 0 1 0 1.38-4.5H8v2H2v-6h2V6a9.98 9.98 0 0 1 8-4z'/%3e %3c/svg%3e");
     width: 1rem;
     height: 1rem;
     margin-right: .25rem;
@@ -29,6 +31,7 @@ button[id$="_power_button"]::before, button[id$="_power_button_long"]::before, b
     content: '';
     background-color: var(--cs-control-default-fg);
     mask-size: contain;
+    -webkit-mask-size: contain;
     display: inline-block;
     vertical-align: baseline;
 }
