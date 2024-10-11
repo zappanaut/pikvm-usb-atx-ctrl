@@ -1,13 +1,18 @@
 /* Here you can customize the Web UI */
 
-img[id$="_power_led"] {
+:root {
+    --img-button-led: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3e %3ccircle cx='32' cy='32' r='20' fill='none' stroke='black' stroke-width='4'/%3e %3ccircle cx='32' cy='32' r='10' fill='black'/%3e %3c/svg%3e");    
+    --img-button-atx-reset: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e %3cpath stroke='black' stroke-linecap='square' stroke-width='.5' d='M12 2A10 10 0 1 1 2 12h2a8 8 0 1 0 1.38-4.5H8v2H2v-6h2V6a9.98 9.98 0 0 1 8-4z'/%3e %3c/svg%3e");
+}
+
+img[class*="_power_led"] {
     content: url('/share/svg/led-atx-power.svg');
 }
-img[id$="_hdd_led"] {
+img[class*="_hdd_led"] {
     content: url('/share/svg/led-atx-hdd.svg');
 }
 
-button[id$="_power_button"]::before, button[id$="_power_button_long"]::before {
+button[class*="_power_button"]::before, button[class*="_power_button_long"]::before {
     mask: url('/share/svg/led-atx-power.svg');
     -webkit-mask: url('/share/svg/led-atx-power.svg');
     width: .9rem;
@@ -17,9 +22,9 @@ button[id$="_power_button"]::before, button[id$="_power_button_long"]::before {
     margin-bottom: -.1rem;
 }
 
-button[id$="_reset_button"]::before {
-    mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e %3cpath stroke='black' stroke-linecap='square' stroke-width='.5' d='M12 2A10 10 0 1 1 2 12h2a8 8 0 1 0 1.38-4.5H8v2H2v-6h2V6a9.98 9.98 0 0 1 8-4z'/%3e %3c/svg%3e");
-    -webkit-mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e %3cpath stroke='black' stroke-linecap='square' stroke-width='.5' d='M12 2A10 10 0 1 1 2 12h2a8 8 0 1 0 1.38-4.5H8v2H2v-6h2V6a9.98 9.98 0 0 1 8-4z'/%3e %3c/svg%3e");
+button[class*="_reset_button"]::before {
+    mask: var(--img-button-atx-reset);
+    -webkit-mask: var(--img-button-atx-reset);
     width: 1rem;
     height: 1rem;
     margin-right: .25rem;
@@ -27,7 +32,7 @@ button[id$="_reset_button"]::before {
     margin-bottom: -.16rem;
 }
 
-button[id$="_power_button"]::before, button[id$="_power_button_long"]::before, button[id$="_reset_button"]::before {
+button[class*="_power_button"]::before, button[class*="_power_button_long"]::before, button[class*="_reset_button"]::before {
     content: '';
     background-color: var(--cs-control-default-fg);
     mask-size: contain;
@@ -36,7 +41,7 @@ button[id$="_power_button"]::before, button[id$="_power_button_long"]::before, b
     vertical-align: baseline;
 }
 
-button[id$="_power_button"]:hover::before, button[id$="_power_button_long"]:hover::before, button[id$="_reset_button"]:hover::before {
+button[class*="_power_button"]:hover::before, button[class*="_power_button_long"]:hover::before, button[class*="_reset_button"]:hover::before {
     background-color: var(--cs-control-hovered-fg);
 }
 
@@ -53,7 +58,7 @@ table.kv tr {
     position: relative;
 }
 
-button[id$="_kvm_button"]::before {
+button[class*="_kvm_button"]::before {
     content: '';
     display: inline-table;
     margin-right: .33rem;
@@ -61,8 +66,8 @@ button[id$="_kvm_button"]::before {
 }
 
 /* move "led" inside button */
-img[id$="_port_active_led"] {
-    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' shape-rendering='optimizeQuality' viewBox='0 0 64 64'%3e %3ccircle cx='32' cy='32' r='20' fill='none' stroke='black' stroke-width='4'/%3e %3ccircle cx='32' cy='32' r='10' fill='black'/%3e %3c/svg%3e");
+img[class*="_port_active_led"] {
+    content: var(--img-button-led);
     pointer-events: none;
     position: absolute;
     top: 50%;
