@@ -112,5 +112,5 @@ kvmd:
                 title: '<img class="led-gray" src="/share/svg/kvm.svg" title=""><span>KVM & ATX</span>'
             table:
                 - ['#', '#<div class="pos-rel"><span class="pos-abs-middle">KVM-Switch</span></div>', '#<span class="padding-x-1">NAME</span>' ,"#PWR", "#HDD", "#&nbsp;", '#<div class="pos-rel"><span class="pos-abs-middle">ATX Power and Reset</span></div>']
-                - ['kvm1_port_active_led|red', 'kvm1_kvm_button||Port 1', '#<span class="x-name">foo</span>', 'atx1_power_led|green', 'atx1_hdd_led|yellow', '#', 'atx1_power_button|confirm|Power <sup><i>short</i></sup>', 'atx1_power_button_long|confirm|Power <sup><i>long</i></sup>', 'atx1_reset_button|confirm|Reset']
-                - ['kvm2_port_active_led|red', 'kvm2_kvm_button||Port 2', '#<span class="x-name">bar</span>', 'atx2_power_led|green', 'atx2_hdd_led|yellow', '#', 'atx2_power_button|confirm|Power <sup><i>short</i></sup>', 'atx2_power_button_long|confirm|Power <sup><i>long</i></sup>', 'atx2_reset_button|confirm|Reset']
+                - ['kvm1_port_active_led|red', 'kvm1_kvm_button||Port 1', '#<span class="x-name">foo</span>', 'atx1_power_led|green', 'atx1_hdd_led|yellow', '#', 'atx1_power_button|confirm|Power', 'atx1_power_button_long|confirm|Power', 'atx1_reset_button|confirm|Reset']
+                - ['kvm2_port_active_led|red', 'kvm2_kvm_button||Port 2', '#<span class="x-name">bar</span>', 'atx2_power_led|green', 'atx2_hdd_led|yellow', '#', 'atx2_power_button|confirm|Power', 'atx2_power_button_long|confirm|Power', 'atx2_reset_button|confirm|Reset']

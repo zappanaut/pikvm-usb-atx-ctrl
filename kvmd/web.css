@@ -45,6 +45,23 @@ button[class*="_power_button"]:hover::before, button[class*="_power_button_long"
     background-color: var(--cs-control-hovered-fg);
 }
 
+button[class*="_power_button"]::after {
+    content: 'short';
+    font-size: smaller;
+    font-style: italic;
+    vertical-align: super;
+    position: relative;
+}
+
+button[class*="_power_button_long"]::after {
+    content: 'long';
+    font-size: smaller;
+    font-style: italic;
+    vertical-align: super;
+    position: relative;
+}
+
+
 .pos-abs-middle {
     position: absolute;
     transform: translateY(-50%);
